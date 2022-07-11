@@ -217,3 +217,47 @@ $ npx hardhat node
 $ npx hardhat console
 > ...
 ```
+
+
+## Next Action
+
+・クリプトゾンビ
+
+Solidityの基礎
+
+https://cryptozombies.io/jp/
+
+
+・Solidity by Example
+
+基礎/実用的なコードのサンプル集。写すだけでなくテストまで作成すると理解深まります。
+
+ERC20/ERC721とかも一応あります。
+
+https://solidity-by-example.org/
+
+
+・openzeppelinでERC20とかをコーディング
+
+「openzepplin erc20」 とかで検索
+
+
+
+## References
+
+・solidityのドキュメント
+
+https://solidity-jp.readthedocs.io/ja/latest/index.html
+
+
+・ethers.jsのドキュメント（主にフロントエンド）
+
+https://docs.ethers.io/v5/
+
+
+・ethereum-waffleドキュメント（テスト）
+
+https://ethereum-waffle.readthedocs.io/en/latest/index.html
+
+
+などなど...
