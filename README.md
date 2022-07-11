@@ -221,6 +221,9 @@ $ npx hardhat console
 
 ## Next Action
 
+・count変数を増やす/減らすコントラクトを一から作ってみる。
+
+
 ・クリプトゾンビ
 
 Solidityの基礎
