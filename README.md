@@ -121,6 +121,9 @@ $ npx hardhat console --network goerli
 
 ・inc()メソッドを作成して、countを+1する。
 
+↓ 変更後のコントラクト
+
+https://github.com/EthicalEatingAndEarn/hardhat-hands-on/blob/update/contracts/Greeter.sol
 
 ※ 別のコントラクトアドレスが生成されます。
 ※ deployments/のjsonは上書き
