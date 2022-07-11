@@ -32,4 +32,11 @@ describe("Greeter", async () => {
     await greeter.connect(signer).setGreeting("Hola");
     expect(await greeter.connect(signer).greet()).to.be.equal("Hola");
   })
+
+  it("count returns how many inc() method was accessed", async() => {
+    expect(await greeter.connect(signer).count()).to.be.equal(0);
+    await greeter.connect(signer).inc()
+    await greeter.connect(signer).inc()
+    expect(await greeter.connect(signer).count()).to.be.equal(2);
+  })
 })
