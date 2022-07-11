@@ -16,11 +16,17 @@ npx hardhat help
 
 # hands on
 必要なもの
+
 ・このリポジトリ
+
 ・テスト用の秘密鍵
+
 ・GoerliのETH
+
 https://goerli-faucet.pk910.de/
+
 ・インフラプロバイダのKEYを取得
+
 https://dashboard.alchemyapi.io/
 
 ## 準備
@@ -39,11 +45,14 @@ $ touch .env
 ```
 
 一旦これだけでOK
+
 テスト用の漏れてもいいアカウントの鍵を登録してください。（メタマスクのアカウントの詳細からいけます。）
+
 ```.env
 PRIVATE_KEY="b00002c5d...."
 ```
 ※ GoerilテストネットのETHはこちらでマイニング可能
+
 https://goerli-faucet.pk910.de/
 
 ## テストを動かしてGreeterの仕様を把握しよう
@@ -53,14 +62,18 @@ $ npx hardhat test test/GreeterTest.ts
 ```
 
 タスク
+
 ・コードを眺めてみよう
+
 ・/deploy/01_greeter.ts のコンストラクタの中身を変えてみよう
+
 ・テストを通そう
 
 
 ## デプロイしてみよう
 
 ・APIKEYを.envに入れる。
+
 ```.env
 ALCHEMY_API_KEY="NJRgdUMjZ3tb..."
 ```
@@ -76,11 +89,13 @@ deploying "Greeter" (tx: 0x4cbef8183e214108b863592b966cec2e7694c8150d315834bfeff
 ```
 
 Tx確認
+
 https://goerli.etherscan.io/
 
 ## コントラクトにトランザクションを送って、greetを変えてみよう
 
 Goerliネットワークのコンソールに入って確認。
+
 ```shell
 $ npx hardhat console --network goerli
 
@@ -91,6 +106,7 @@ $ npx hardhat console --network goerli
 ```
 
 変えてみる。
+
 ```shell
 > await greeter.setGreeting("helloooo!!!")
 → txinfo...
@@ -100,6 +116,7 @@ $ npx hardhat console --network goerli
 
 ## コントラクト自体を変更して再デプロイしてみよう。
 ・別のコントラクトアドレスが生成されます。
+
 
 
 
