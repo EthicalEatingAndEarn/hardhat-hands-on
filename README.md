@@ -15,11 +15,11 @@ npx hardhat help
 ```
 
 # hands on
-必要なもの
+## 必要なもの
 
 ・このリポジトリ
 
-・エディタ（VS Code）がおすすめ。
+・エディタ（VS Codeがおすすめ。）
 
 ・テスト用の秘密鍵（本番でもいいが、.envに残り続けるのが気持ち悪い人は別アカウントで）
 
@@ -36,6 +36,17 @@ https://dashboard.alchemyapi.io/
 Alchemy / Infraあたりが有名
 
 https://ethereum.org/en/developers/docs/nodes-and-clients/nodes-as-a-service/
+
+
+## ゴール
+
+・コントラクト開発するときのなんとなくのイメージを掴む
+
+・既存のコントラクトから少し手を入れて、コードを改変してみる。
+
+・（アドバンス）簡単なコントラクトを一から作れる。
+
+※ 文法の理解はそのうち...
 
 
 ## 準備
