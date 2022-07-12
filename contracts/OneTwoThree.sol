@@ -6,8 +6,8 @@ contract OneTwoThree {
     uint private _counter;
     uint public max;
 
-    event Inc(address);
-    event GameOver(address);
+    event Inc(address indexed);
+    event GameOver(address indexed);
 
     constructor(uint _max) {
         _counter = 0;
@@ -15,15 +15,15 @@ contract OneTwoThree {
     }
 
     function inc(uint num) public {
-        // require(_counter < max, "the game was over. create new game");
-        require(num <= 3, "you can enter number 3 or less.");
+        require(_counter < max, "the game was over. plrease create a new game.");
+        require(num <= 3 && num > 0, "you can enter number 1 ~ 3");
         _counter += num;
 
         // console.log("the counter is %s", _counter);
 
         if(_counter >= max) {
             console.log("max reached");
-            _counter = 0;
+            // _counter = 0;
 
             emit GameOver(msg.sender);
 
