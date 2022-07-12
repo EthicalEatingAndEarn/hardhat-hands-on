@@ -19,7 +19,7 @@ npx hardhat help
 
 ・このリポジトリ
 
-・テスト用の秘密鍵
+・テスト用の秘密鍵（本番でもいいが、.envに残り続けるのが気持ち悪い人は別アカウントで）
 
 ・GoerliのETH
 
@@ -28,6 +28,13 @@ https://goerli-faucet.pk910.de/
 ・インフラプロバイダのKEYを取得
 
 https://dashboard.alchemyapi.io/
+
+※ Alchemyは開発者に対してEthererumのNodeを提供するサービス
+
+Alchemy / Infraあたりが有名
+
+https://ethereum.org/en/developers/docs/nodes-and-clients/nodes-as-a-service/
+
 
 ## 準備
 
@@ -44,7 +51,7 @@ $ yarn install
 $ touch .env
 ```
 
-一旦これだけでOK
+↓ 一旦これだけでOK（デプロイ時にAlchemyで取得したAPIKEYを入れる。）
 
 テスト用の漏れてもいいアカウントの鍵を登録してください。（メタマスクのアカウントの詳細からいけます。）
 
@@ -65,12 +72,11 @@ $ npx hardhat test test/GreeterTest.ts
 
 ・コードを眺めてみよう
 
-・/deploy/01_greeter.ts のコンストラクタの中身を変えてみよう
+・初期値を変えてみる（ `/deploy/01_greeter.ts` で変更可能。）
 
-・テストを通そう
+・テスト通す。
 
-
-## デプロイしてみよう
+## まずはデプロイしてみよう
 
 ・APIKEYを.envに入れる。
 
@@ -88,11 +94,25 @@ No need to generate any newer typings.
 deploying "Greeter" (tx: 0x4cbef8183e214108b863592b966cec2e7694c8150d315834bfefff79e5a5cf86)...: deployed at 0xe3189083bfD9158382E7BE569D9B6A19e6C67De6 with 383521 gas
 ```
 
+
+constructorの中身は `/deploy/01_greeter.ts` で定義されています。
+
+ここを変更すれば初期値を変えられます。
+
+
 Tx確認
 
 https://goerli.etherscan.io/
 
-## コントラクトにトランザクションを送って、greetを変えてみよう
+
+(ex)
+
+Tx: https://goerli.etherscan.io/tx/0x4cbef8183e214108b863592b966cec2e7694c8150d315834bfefff79e5a5cf86
+
+Contract: https://goerli.etherscan.io/address/0xe3189083bfD9158382E7BE569D9B6A19e6C67De6
+
+
+## Goerliにデプロイされたコントラクトにトランザクションを送って、greetを変えてみよう
 
 Goerliネットワークのコンソールに入って確認。
 
@@ -102,7 +122,7 @@ $ npx hardhat console --network goerli
 > const Greeter = await ethers.getContractFactory("Greeter")
 > let greeter = await ethers.getContractAt("Greeter", "ここにデプロイしたコントラクトアドレスを入れる")
 > await greeter.greet()
-'こんにちわ'
+'Hello'
 ```
 
 変えてみる。
@@ -126,6 +146,7 @@ $ npx hardhat console --network goerli
 https://github.com/EthicalEatingAndEarn/hardhat-hands-on/blob/update/contracts/Greeter.sol
 
 ※ 別のコントラクトアドレスが生成されます。
+
 ※ deployments/のjsonは上書き
 
 ```shell
@@ -206,7 +227,7 @@ Error: missing revert data in call exception; Transaction reverted without a rea
 
 
 ## advance
-ローカルチェーンデプロイしていじってみよう
+・ローカルチェーンデプロイしていじってみよう
 
 テストネットだとテストETHとか手に入れるのがめんどくさいので。等
 
@@ -219,10 +240,20 @@ $ npx hardhat console
 ```
 
 
+・hardhatのタスクを作成してみよう
+└ 自作コマンドを作成できる。
+
+ref
+
+https://hardhat.org/hardhat-runner/docs/advanced/create-task
+
+
+
 ## Next Action
 
 ・count変数を増やす/減らすコントラクトを一から作ってみる。
 
+・何かゲームを作ってみる。
 
 ・クリプトゾンビ
 
