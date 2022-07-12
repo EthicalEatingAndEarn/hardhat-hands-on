@@ -68,6 +68,10 @@ https://goerli-faucet.pk910.de/
 $ npx hardhat test test/GreeterTest.ts
 ```
 
+※ hardhat shorthandというツールで `npx hardhat` を `hh` のみでショートカットできます。
+
+https://hardhat.org/hardhat-runner/docs/guides/command-line-completion
+
 タスク
 
 ・コードを眺めてみよう
