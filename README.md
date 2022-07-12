@@ -21,7 +21,7 @@ npx hardhat help
 
 ・テスト用の秘密鍵（本番でもいいが、.envに残り続けるのが気持ち悪い人は別アカウントで）
 
-・GoerliのETH
+・GoerliテストネットのETH
 
 https://goerli-faucet.pk910.de/
 
@@ -51,17 +51,6 @@ $ yarn install
 $ touch .env
 ```
 
-↓ 一旦これだけでOK（デプロイ時にAlchemyで取得したAPIKEYを入れる。）
-
-テスト用の漏れてもいいアカウントの鍵を登録してください。（メタマスクのアカウントの詳細からいけます。）
-
-```.env
-PRIVATE_KEY="b00002c5d...."
-```
-※ GoerilテストネットのETHはこちらでマイニング可能
-
-https://goerli-faucet.pk910.de/
-
 ## テストを動かしてGreeterの仕様を把握しよう
 
 ```shell
@@ -80,15 +69,27 @@ https://hardhat.org/hardhat-runner/docs/guides/command-line-completion
 
 ・テスト通す。
 
-## まずはデプロイしてみよう
+## テストネットにデプロイしてみよう
 
-・APIKEYを.envに入れる。
+・ウォレットの秘密鍵（デプロイ時にガスを払うアカウント）
+
+・AlchemyのAPI_KEY
+
+
+テスト用の漏れてもいいアカウントの鍵を登録してください。（メタマスクのアカウントの詳細からいけます。）
 
 ```.env
+PRIVATE_KEY="b00002c5d...."
 ALCHEMY_API_KEY="NJRgdUMjZ3tb..."
 ```
 
-Goerli
+※ GoerilテストネットのETHはこちらでマイニング可能
+
+https://goerli-faucet.pk910.de/
+
+
+Goerliテストネットにデプロイ
+
 ```shell
 $ npx hardhat deploy --network goerli
 
